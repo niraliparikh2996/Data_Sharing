@@ -1,3 +1,5 @@
+import {  RouterReducerState } from '@ngrx/router-store';
+
 // Contact NGRX  
 export interface Contact {
   name: String;

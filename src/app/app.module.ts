@@ -16,7 +16,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffect } from './store/app.effects';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/app.reducer';
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { CustomSerializer } from './shared/utils';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,10 @@ import { userReducer } from './store/app.reducer';
     StoreModule.forRoot({
       userData: userReducer
     }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
+    StoreRouterConnectingModule.forRoot({ serializer: CustomSerializer}),
     EffectsModule.forRoot([AppEffect]),
     AppRoutingModule,
     HttpClientModule,

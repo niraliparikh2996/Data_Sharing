@@ -1,10 +1,15 @@
 import { AppState, State } from './app.state';
 import * as UserAction from '../store/app.actions';
+import { routerReducer } from '@ngrx/router-store';
+import { ActionReducerMap } from '@ngrx/store';
 
 //Contact NGRX
 export const defaultState: AppState = {
     userData: []
 }
+// export const reducers: ActionReducerMap<AppState> = {
+//     router: routerReducer,
+//   };
 //User NGRX
 export const initialState: State = {
     data: []
