@@ -17,8 +17,8 @@ import { AppEffect } from './store/app.effects';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { CustomSerializer } from './shared/utils';
+// import { StoreRouterConnectingModule } from '@ngrx/router-store';
+// import { CustomSerializer } from './shared/utils';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { CustomSerializer } from './shared/utils';
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),
-    StoreRouterConnectingModule.forRoot({ serializer: CustomSerializer}),
+    //StoreRouterConnectingModule.forRoot({ serializer: CustomSerializer}),
     EffectsModule.forRoot([AppEffect]),
     AppRoutingModule,
     HttpClientModule,
